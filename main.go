@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"priority_queue_scheduler/scheduler"
+	"github.com/jacklester00/Go-Task-Priority-Scheduler/scheduler"
 )
 
 // main runs the interactive task scheduler CLI.

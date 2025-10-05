@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"priority_queue_scheduler/scheduler"
+	"github.com/jacklester00/Go-Task-Priority-Scheduler/scheduler"
 )
 
 func TestMain_Integration(t *testing.T) {
