@@ -31,4 +31,4 @@ jobs:
       run: go test -bench=. ./...
     
     - name: Build project
-      run: go build -v .
+      run: go build -v -o task-scheduler .
