@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"priority-queue-scheduler/scheduler"
+	"priority_queue_scheduler/scheduler"
 )
 
 // main runs the interactive task scheduler CLI.

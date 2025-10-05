@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"priority-queue-scheduler/scheduler"
+	"priority_queue_scheduler/scheduler"
 )
 
 func TestMain_Integration(t *testing.T) {

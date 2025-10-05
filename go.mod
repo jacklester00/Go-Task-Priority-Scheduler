@@ -1,3 +1,3 @@
-module priority-queue-scheduler
+module priority_queue_scheduler
 
 go 1.21
