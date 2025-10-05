@@ -158,37 +158,3 @@ func TestCLICommands(t *testing.T) {
 		t.Errorf("Expected 0 tasks after next, got %d", len(tasks))
 	}
 }
-
-// Benchmark the main functionality
-func BenchmarkPriorityQueueOperations(b *testing.B) {
-	pq := scheduler.NewPriorityQueue()
-
-	// Pre-populate with some tasks
-	for i := 0; i < 100; i++ {
-		pq.Add(&scheduler.Task{Name: "task", Priority: i})
-	}
-
-	b.ResetTimer()
-
-	// Benchmark add operation
-	b.Run("Add", func(b *testing.B) {
-		for i := 0; i < b.N; i++ {
-			pq.Add(&scheduler.Task{Name: "benchmark task", Priority: i})
-		}
-	})
-
-	// Benchmark next operation (requires tasks to be present)
-	b.Run("Next", func(b *testing.B) {
-		// Add tasks for each benchmark iteration
-		for i := 0; i < b.N; i++ {
-			pq.Add(&scheduler.Task{Name: "benchmark task", Priority: i})
-		}
-
-		b.ResetTimer()
-		for i := 0; i < b.N; i++ {
-			if pq.Len() > 0 {
-				pq.Next()
-			}
-		}
-	})
-}
