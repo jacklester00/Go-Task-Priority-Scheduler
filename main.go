@@ -37,7 +37,11 @@ func main() {
 			}
 			// Join all parts except last as task name (supports multi-word names)
 			name := strings.Join(parts[1:len(parts)-1], " ")
-			priority, _ := strconv.Atoi(parts[len(parts)-1])
+			priority, err := strconv.Atoi(parts[len(parts)-1])
+			if err != nil {
+				fmt.Printf("Error: '%s' is not a valid priority number\n", parts[len(parts)-1])
+				continue
+			}
 			pq.Add(&scheduler.Task{Name: name, Priority: priority})
 			fmt.Println("Added task:", name)
 
@@ -57,12 +61,20 @@ func main() {
 				fmt.Printf("%d. %s (priority %d)\n", i+1, t.Name, t.Priority)
 			}
 
+		case "help":
+			fmt.Println("Available commands:")
+			fmt.Println("  add <name> <priority>  - Add a new task")
+			fmt.Println("  next                   - Get the next highest priority task")
+			fmt.Println("  list                   - Show all current tasks")
+			fmt.Println("  help                   - Show this help message")
+			fmt.Println("  quit, exit             - Exit the program")
+
 		case "quit", "exit":
 			fmt.Println("Goodbye!")
 			return
 
 		default:
-			fmt.Println("Commands: add, next, list, quit")
+			fmt.Println("Unknown command. Type 'help' for available commands.")
 		}
 	}
 }

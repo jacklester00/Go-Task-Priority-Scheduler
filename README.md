@@ -50,9 +50,10 @@ go run .
 
 ### Available Commands
 
-- `add <name> <priority>` - Add a new task with the specified name and priority (higher numbers = higher priority)
+- `add <name> <priority>` - Add a new task (higher numbers = higher priority)
 - `next` - Get and remove the next highest priority task
-- `list` - Show all current tasks in priority order
+- `list` - Show all current tasks
+- `help` - Show available commands
 - `quit` or `exit` - Exit the program
 
 ### Example Session
@@ -107,14 +108,11 @@ go test -cover ./...
 
 ## CI/CD
 
-This project uses GitHub Actions for continuous integration:
+Automated testing with GitHub Actions:
 
-- **Automated testing**: Runs on every push and pull request
-- **Multi-version testing**: Tests against Go 1.21, 1.22, and 1.23
-- **Performance benchmarking**: Validates operation efficiency
-- **Code quality checks**: Linting and formatting
-- **Test coverage reporting**: Shows code coverage statistics
-- **Build verification**: Ensures project builds successfully
+- **Tests**: Run on every push and pull request
+- **Build verification**: Ensures project compiles successfully
+- **Benchmarks**: Performance validation
 
 ![CI Status](https://github.com/jacklester00/Go-Task-Priority-Scheduler/workflows/Tests/badge.svg)
 
