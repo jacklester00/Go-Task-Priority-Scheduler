@@ -18,11 +18,10 @@
 go.work
 
 # Build output
-scheduler
 scheduler.exe
 
 # IDE files
-.vscode/
+vscode/
 .idea/
 *.swp
 *.swo
