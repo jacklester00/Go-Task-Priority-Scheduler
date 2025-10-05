@@ -1,3 +1,5 @@
-module github.com/jacklester00/Go-Task-Priority-Scheduler
+module example.com/scheduler
 
 go 1.21
+
+replace example.com/scheduler/scheduler => ./scheduler
